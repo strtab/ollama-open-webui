@@ -1,0 +1,31 @@
+services:
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    restart: unless-stopped
+    init: true
+    #gpus: all
+    volumes:
+    - ollama:/root/.ollama
+    expose:
+    - "11434"
+
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    restart: unless-stopped
+    volumes:
+    - open-webui:/app/backend/data
+    depends_on:
+    - ollama
+    environment:
+    - OLLAMA_BASE_URL=//ollama:11434
+    #- OPENAI_API_KEY=NONE 
+    ports: 
+    - 3000:8080
+
+volumes:
+  open-webui:
+   external: true
+  ollama:
+   external: true 
