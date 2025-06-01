@@ -6,13 +6,18 @@
 - [Ollama](https://hub.docker.com/r/ollama/ollama)
 - [Open-WebUI](https://github.com/open-webui/open-webui)
 
-## Install
+## Installation
 ```bash
 git clone https://github.com/strtab/ollama-open-webui.git
 cd ollama-open-webui
 ```
-Uncloment line 7 in compose.yaml for use gpus
-### And run
+###Create volumes
+```
+docker volume create ollama
+docker volume create open-webui
+```
+- Uncomment line 7 in compose.yaml if you want to use gpus
+## Launch
 ```bash
 docker compose up -d
 ```
