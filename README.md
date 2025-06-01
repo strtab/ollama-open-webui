@@ -1,6 +1,5 @@
 # Ollama + Open WebUI
 
-## Requirements
 - [Docker](https://www.docker.com/)
 - [Nvidia Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) 
 - [Ollama](https://hub.docker.com/r/ollama/ollama)
