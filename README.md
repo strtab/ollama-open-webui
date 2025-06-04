@@ -10,7 +10,7 @@
 git clone https://github.com/strtab/ollama-open-webui.git
 cd ollama-open-webui
 ```
-###Create volumes
+### Create volumes
 ```
 docker volume create ollama
 docker volume create open-webui
